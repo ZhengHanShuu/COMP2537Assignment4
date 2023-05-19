@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #stats span {
+    margin-right: 1rem;
+  }
+  
+  #game_grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    margin: 1rem;
+    max-width: 90%;
+  }
+  
+  .card {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    perspective: 1000px;
+  }
+  
+  .card_inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+  }
+  
+  .card.flip .card_inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card_face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border: none;
+  }
+  
+  
+  .card .front {
+    transform: rotateY(180deg);
+  }
+
+  .card_face.back {
+    background-image: url('back.webp'); 
+    background-size: cover; 
+    background-position: center; 
+  }
+  
+  #controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #winning-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .card .back {
+    background-color: #ffffff;
+  }
+  
+  :root {
+    --background-color: #ffffff;
+    --header-background-color: #f0f0f0;
+    --text-color: #000000;
+    --border-color: #ccc;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  header {
+    background-color: var(--header-background-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
